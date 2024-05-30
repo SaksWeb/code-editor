@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <title>Landing Page</title>
+</head>
+
+<body>
+    <nav class="navbar background h-nav-resp">
+        <ul class="nav-list v-class-resp">
+            <div class="logo"><img src="./styles/imgs/logo.jpg" alt="logo"></div>
+            <li><a href="#">Home</a></li>
+            <li><a href="editor_index.html">Code Editor</a></li>
+            <li><a href="sortingvisualizer_index.html">Sorting Visualizer</a></li>
+            <li><a href="https://saksweb.github.io/portfolio-saksham/" target="_blank">About me</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+       
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <section class="background firstSection">
+        <div class="box-main">
+            <div class="firstHalf">
+                <p class="text-big">Welcome</p>
+                <p class="text-small">to the Code Editor and Sorting Visualizer web app! Here, you can code in HTML, CSS, and JavaScript, and visualize the representation of various sorting algorithms.</p>
+                
+            </div>
+
+            <div class="secondHalf">
+                <img src="./styles/imgs/side.jpg" alt="Laptop Image">
+            </div>
+        </div>
+    
+   
+
+     <!-- Contact Section -->
+     <section id="contact">
+        <video autoplay muted loop>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="container">
+            <h2>Contact Me</h2>
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+                <input type="hidden" name="access_key" value="f115796d-53bd-4fc6-b33a-f059dad06d80">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+    
+        <p>&copy; 2023 Saksham Shrivastava. All rights reserved.</p>
+        <ul class="social-icons">
+          <li><a href="https://www.linkedin.com/in/saksham-shrivastava-a77786205" class="fab fa-linkedin"></a></li>
+          <li><a href="https://github.com/SaksWeb" class="fab fa-github"></a></li>
+          <li><a href="https://instagram.com/sakshamshrivastava662?igshid=YmMyMTA2M2Y=" class="fab fa-instagram"></a></li>
+        </ul>
+      </footer>
+    <script>
+        burger = document.querySelector('.burger')
+        navbar = document.querySelector('.navbar')
+        navList = document.querySelector('.nav-list')
+        rightNav = document.querySelector('.rightNav')
+
+
+
+        burger.addEventListener('click', () => {
+            rightNav.classList.toggle('v-class-resp');
+            navList.classList.toggle('v-class-resp');
+            navbar.classList.toggle('h-nav-resp');
+
+        })
+    </script>
+
+</body>
+
+</html>

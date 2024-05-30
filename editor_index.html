@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <title>Code Editor</title>
+    <link rel="stylesheet" href="styles/editor_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://kit.fontawesome.com/0520f4b73c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar background h-nav-resp">
+        <ul class="nav-list v-class-resp">
+            <div class="logo"><img src="./styles/imgs/logo.png" alt="logo"></div>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="editor_index.html">Code Editor</a></li>
+            <li><a href="sortingvisualizer_index.html">Sorting Visualizer</a></li>
+            <li><a href="https://saksweb.github.io/portfolio-saksham/" target="_blank">About me</a></li>
+            
+        </ul>
+       
+        <div class="burger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <div class="left">
+            <label><i class="fa-brands fa-html5"></i>HTML</label>
+            <textarea id="html-code" onkeyup="run()"></textarea>
+
+            <label><i class="fa-brands fa-css3-alt"></i>CSS</label>
+            <textarea id="css-code" onkeyup="run()"></textarea>
+
+            <label><i class="fa-brands fa-js"></i>JavaScript</label>
+            <textarea id="js-code" onkeyup="run()"></textarea>
+        </div>
+        <div class="right">
+            <label><i class="fa-solid fa-play"></i>Output</label>
+            <iframe id="output"></iframe>
+        </div>
+    </div>
+    <footer>
+    
+        <p>&copy; 2023 Saksham Shrivastava. All rights reserved.</p>
+        <ul class="social-icons">
+          <li><a href="https://www.linkedin.com/in/saksham-shrivastava-a77786205" class="fab fa-linkedin"></a></li>
+          <li><a href="https://github.com/SaksWeb" class="fab fa-github"></a></li>
+          <li><a href="https://instagram.com/sakshamshrivastava662?igshid=YmMyMTA2M2Y=" class="fab fa-instagram"></a></li>
+        </ul>
+      </footer>
+    <script>
+
+        burger = document.querySelector('.burger')
+        navbar = document.querySelector('.navbar')
+        navList = document.querySelector('.nav-list')
+        rightNav = document.querySelector('.rightNav')
+
+
+
+        burger.addEventListener('click', () => {
+            rightNav.classList.toggle('v-class-resp');
+            navList.classList.toggle('v-class-resp');
+            navbar.classList.toggle('h-nav-resp');
+
+        })
+
+        function run() {
+            let htmlCode = document.getElementById("html-code").value;
+            let cssCode = document.getElementById("css-code").value;
+            let jsCode = document.getElementById("js-code").value;
+            let output = document.getElementById("output");
+
+            output.contentDocument.body.innerHTML = htmlCode + "<style>" + cssCode + "</style>";
+            output.contentWindow.eval(jsCode);
+
+        }
+    </script>
+</body>
+
+</html>
